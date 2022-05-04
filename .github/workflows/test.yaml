@@ -1,1 +1,17 @@
 
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
+      - 'hotfix-*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print ENV
+        run: env
